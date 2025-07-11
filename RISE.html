@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RISE</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+.site-footer {
+  background: linear-gradient(to right, #ffe4e1, #f8bbd0);
+  color: #333;
+  padding: 40px 20px 20px;
+  border-top: 4px solid purple;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+    @keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.social-icons a {
+  font-size: 1.5em;
+  margin-right: 12px;
+  color: purple;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: rgb(255, 192, 231);
+  animation: bounce 0.6s;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.social-icons a {
+  font-size: 1.5em;
+  margin-right: 12px;
+  color: purple;
+  transition: color 0.3s;
+}
+
+
+
+    @media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+#whatsappButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    padding: 16px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 9999;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+
+  #whatsappButton:hover {
+    transform: scale(1.1);
+    background-color: #128C7E;
+  }
+
+
+    .founder-profile {
+  display: flex;
+  flex-direction: column;      
+  align-items: center;        
+  gap: 20px;                    
+  max-width: 800px;
+  margin: 0 auto;             
+  padding: 20px;
+}
+
+@media (min-width: 600px) 
+{}
+  .founder-profile {
+    flex-direction: row;       
+    text-align: left;
+  }
+  .founder-profile img {
+    flex: 0 0 200px;          
+    margin-right: 20px;
+  }
+  .founder-profile p {
+    flex: 1;                   /
+}
+
+.founder-profile img {
+  width: 100%;
+  max-width: 50%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+    ul li {
+  margin: 6px 0;
+  padding: 6px 10px;
+  border-left: 4px solid purple;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+}
+    
+    nav a.active {
+  background-color: purple;
+}
+    
+    .logo {
+      width: 10%;
+      max-width: 120%;
+      display: flex;
+      align-items: center;
+      margin: auto;
+      padding: 0px;
+      height: auto;
+      justify-content: center;
+    }
+
+    header {
+      background-color: pink;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      flex-direction:column;
+      gap:10px;
+    }
+    
+    @media (min-width: 600px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+    section {
+      padding: 20px;
+    }
+    section img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+    nav {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background-color: purple;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    nav a:hover {
+      background-color: black;
+    }
+
+    nav a {
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    #darkModToggle {
+  background: pink;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+    body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode nav {
+  background-color: #333;
+}
+
+body.dark-mode nav a {
+  color: #f0f0f0;
+}
+
+body.dark-mode nav a:hover,
+body.dark-mode nav a.active {
+  background-color: #555;
+}
+
+body.dark-mode header {
+  background-color: #222;
+  color: #f0f0f0;
+}
+
+body.dark-mode .section-heading,
+body.dark-mode .sub-heading {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+body.dark-mode footer {
+  background-color: #222;
+  color: #aaa;
+}
+    body {
+      margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-repeat: no-repeat;
+  background-position: center center; 
+  background-size: contain; 
+  min-height: 100vh; 
+  background-image: none; 
+  transition: background-color 0.5s ease;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+
+.footer-section h3 {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.2em;
+  color: #6a1b9a;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+color: #c2185b;
+}
+
+.social-icons a {
+  font-size: 1.5em;
+  margin-right: 10px;
+  color: purple;
+}
+
+.social-icons a:hover {
+  color: black;
+}
+
+footer .copyright {
+  text-align: center;
+  margin-top: 20px;
+  color: gray;
+}
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 0px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+       cursor: zoom-in;
+
+    }
+
+    .section-heading {
+      color: white;
+      background-color: purple;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .sub-heading {
+      color: white;
+      background-color: purple;
+      padding: 10px;
+    }
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #fdf6fb;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.calendar-day {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  font-weight: bold;
+}
+
+.calendar-day.event {
+  background-color: #ffe4e1;
+  border-left: 4px solid purple;
+  color: #4b0082;
+  cursor: pointer;
+}
+
+.calendar-day:hover {
+  background-color: #f3e5f5;
+  transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+  .calendar-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+    
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <nav>
+      <a class="active" href="home.html">Home</a> 
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+<button id="darkModToggle" onclick="toggleDarkMode()" style="position: fixed; top: 10px; right: 10px; z-index: 999; background: purple; color: white; border: none; padding: 8px 12px; border-radius: 8px; cursor: pointer;">
+  Toggle Dark Mode
+</button>
+
+<button onclick="changeBackground()" style="position: fixed; top: 60px; right: 10px; z-index: 999;">
+  Change Background Color 🎨
+</button>
+  
+  <header>
+    <h1>Welcome to RISE</h1> 
+
+    <section style="text-align: center; margin-top: 20px;">
+  <label for="username">Enter your name:</label>
+  <input type="text" id="username" placeholder="Your name" />
+  <button onclick="saveName()">Save</button>
+  <h2 id="greeting"></h2>
+</section>
+
+    <img class="logo" src="https://cdn.glitch.global/aa471699-50ea-47c7-942c-23c2415755c0/7e5f9b3d-d6a1-4439-94f8-af172d308ddf.jpg?v=1749546396648" alt="RISE">
+ 
+  </header>
+
+  <h2 class="section-heading">Gallery Drift</h2>
+<a href="https://wa.me/923359050545?text=Hello%20RISE%20Team%2C%20I'm%20interested%20in%20your%20programs!" 
+   target="_blank" 
+   id="whatsappButton" 
+   title="Chat with us on WhatsApp">
+  <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp Icon" style="width: 28px; height: 28px;">
+</a>
+  <div class= "gallery">
+    <img src="https://cdn.glitch.global/aa471699-50ea-47c7-942c-23c2415755c0/7e5f9b3d-d6a1-4439-94f8-af172d308ddf.jpg?v=1749546396648" alt="RISE logo with hands raised in unity" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)" style="transition: transform 0.3s;" />
+    <img src="https://cdn.glitch.global/aa471699-50ea-47c7-942c-23c2415755c0/7dbaa791-c005-40a5-9db0-08e6dc5c5f22.jpg?v=1749668276204" alt="Group photo from RISE event " onmouseover="zoomIn(this)" onmouseout="zoomOut(this)" style="transition: transform 0.3s;" />
+    <img src="https://cdn.glitch.global/aa471699-50ea-47c7-942c-23c2415755c0/WhatsApp%20Image%202025-06-12%20at%2012.36.59%20AM.jpeg?v=1749671146263" alt="Workshop session with attendees at RISE " onmouseover="zoomIn(this)" onmouseout="zoomOut(this)" style="transition: transform 0.3s;" />
+    <img src="https://cdn.glitch.global/aa471699-50ea-47c7-942c-23c2415755c0/WhatsApp%20Image%202025-06-12%20at%2012.36.56%20AM.jpeg?v=1749671253707" alt="Hina Raza speaking at a community gathering " onmouseover="zoomIn(this)" onmouseout="zoomOut(this)" style="transition: transform 0.3s;" />
+    <img src="https://cdn.glitch.global/aa471699-50ea-47c7-942c-23c2415755c0/WhatsApp%20Image%202025-06-12%20at%2012.36.55%20AM.jpeg?v=1749671409687" alt="Team collaboration during RISE meetup " onmouseover="zoomIn(this)" onmouseout="zoomOut(this)" style="transition: transform 0.3s;" />
+    <img src="https://cdn.glitch.global/aa471699-50ea-47c7-942c-23c2415755c0/WhatsApp%20Image%202025-06-12%20at%2012.36.55%20AM%20(1).jpeg?v=1749671684757" alt="Smiling volunteers at a RISE initiative " onmouseover="zoomIn(this)" onmouseout="zoomOut(this)" style="transition: transform 0.3s;" />
+    <img src="https://cdn.glitch.global/aa471699-50ea-47c7-942c-23c2415755c0/WhatsApp%20Image%202025-06-12%20at%2012.36.56%20AM%20(2).jpeg?v=1749671796324" alt="Participants engaging during a RISE activity " onmouseover="zoomIn(this)" onmouseout="zoomOut(this)" style="transition: transform 0.3s;" />
+    <img src="https://cdn.glitch.global/aa471699-50ea-47c7-942c-23c2415755c0/7e5f9b3d-d6a1-4439-94f8-af172d308ddf.jpg?v=1749546396648" alt="RISE logo with hands raised in unity"> 
+
+  </div>
+  
+
+  <section style="background-color: #fff0f5; padding: 20px; margin: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center;">
+  <h2 style="color: purple;">✨ Purpose & Positivity</h2>
+  <p style="font-size: 1.2em; font-style: italic; color: #444;">
+    "Every individual is like a number—unique, valuable, and full of purpose."
+  </p>
+</section>
+
+<section style="text-align: center; padding: 20px;">
+  <h2 class="section-heading">RISE Moments</h2>
+  <img id="sliderImage" src="https://cdn.glitch.global/aa471699-50ea-47c7-942c-23c2415755c0/7dbaa791-c005-40a5-9db0-08e6dc5c5f22.jpg?v=1749668276204" 
+       alt="RISE event" style="max-width: 90%; border-radius: 10px;" />
+  <br><br>
+  <button onclick="nextImage()" style="padding: 8px 16px; border: none; background: purple; color: white; border-radius: 8px;">Next Image</button>
+</section>
+<section>
+<h2 class="sub-heading">📅 Monthly Event Calendar</h2>
+  <div style="text-align: center; margin-bottom: 10px;">
+    <button onclick="prevMonth()" style="margin-right: 10px;">⬅️ Previous</button>
+    <span id="calendarTitle" style="font-weight: bold;"></span>
+    <button onclick="nextMonth()" style="margin-left: 10px;">➡️ Next</button>
+  </div>
+  <div class="calendar-grid" id="calendarGrid"></div>
+
+</section>
+  <section>
+    <h2 class="sub-heading">Meet the Founder of RISE<br><br>Hina Raza</h2>
+
+    <div style="background-color: #fff0f5; padding: 20px; margin-top: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;">
+  <p style="font-style: italic; color: purple;">
+    “Hina Raza believes every number — even or odd — has a purpose, just like people.”
+  </p>
+  <input type="number" id="aboutNumberInput" placeholder="Enter a number" style="padding: 10px; border-radius: 8px; margin-top: 10px;" />
+  <button onclick="checkAboutEvenOdd()" style="padding: 10px 20px; margin-left: 10px; background-color: purple; color: white; border: none; border-radius: 6px;">Check</button>
+  <p id="aboutResultMessage" style="font-weight: bold; margin-top: 15px;"></p>
+</div>
+    </div> 
+
+    <div class="founder-profile">
+    <img
+      src="C:\Users\user\Desktop\RISE Website\WhatsApp Image 2025-06-12 at 12.36.57 AM.jpeg"
+      alt="Portrait of Hina Raza, founder of RISE"
+    />
+    <p>
+      Hina Raza founded <strong>RISE</strong> with a vision to empower individuals
+      through innovative, purpose‑driven solutions. Her passion for growth and
+      community fuels everything we do at RISE.
+    </p>
+  </div>
+    
+  </section>
+<section>
+  <h2 class="sub-heading">Our Services</h2>
+  <ul id="servicesList" style="font-weight: bold; padding-left: 20px;"></ul>
+  <button onclick="displayServices()" style="margin-top: 10px;">Show Services</button>
+</section>
+
+<section>
+  <h2 class="sub-heading">Key Features</h2>
+  <ul id="featuresList" style="font-weight: bold; padding-left: 20px;"></ul>
+  <button onclick="displayFeatures()" style="margin-top: 10px;">Show Features</button>
+</section>
+
+
+
+
+  <script>
+  let siteName = "RISE";
+
+  function welcomeUser() {
+    let userName = prompt("Please enter your name");
+    if (userName) {
+      const greeting = document.createElement("h2");
+      greeting.textContent = `Hello, ${userName}! Welcome to ${siteName}.`;
+      greeting.style.color = "pink";
+      greeting.style.textAlign = "center";
+      greeting.style.marginTop = "20px";
+      document.body.insertAdjacentElement("afterbegin", greeting);
+    }
+  }
+
+
+  
+
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    const btn = document.getElementById("darkModToggle");
+    btn.textContent = document.body.classList.contains("dark-mode")
+      ? "Toggle Light Mode"
+      : "Toggle Dark Mode";
+  }
+
+ function changeSectionColor(section) {
+  const colors = ["#fff0f5", "#f0fff0", "#f5f5dc", "#e6f7ff", "#faf0e6", "#fefbd8"];
+  const random = Math.floor(Math.random() * colors.length);
+  section.style.backgroundColor = colors[random];
+ }
+
+  function zoomIn(image) {
+    image.style.transform = "scale(1.1)";
+  }
+
+  function zoomOut(image) {
+    image.style.transform = "scale(1)";
+  }
+
+  function changeText(section) {
+    section.textContent = "🎉 Surprise! You clicked the section!";
+    section.style.backgroundColor = "#ffe4e1";
+  }
+
+  
+    let skills = new Array("Leadership", "Teamwork", "Problem Solving", "Creativity");
+    
+    function displaySkills() {
+  let skills = new Array("Leadership", "Teamwork", "Problem Solving", "Creativity");
+
+  let list = document.getElementById("skillsList");
+  list.innerHTML = ""; // clear old content
+
+  for (let i = 0; i < skills.length; i++) {
+    let listItem = document.createElement("li");
+    listItem.textContent = skills[i];
+    list.appendChild(listItem);
+  }
+}
+    function displayServices() {
+  const services = new Array(
+    "Leadership Workshops",
+    "Mentoring Programs",
+    "Skill Development Courses",
+    "Innovation Challenges",
+    "Community Outreach"
+  );
+
+  const list = document.getElementById("servicesList");
+  list.innerHTML = ""; // clear old list
+  services.forEach(service => {
+    const li = document.createElement("li");
+    li.textContent = service;
+    list.appendChild(li);
+  });
+}
+
+function displayFeatures() {
+  const features = new Array(
+    "Dark Mode",
+    "Responsive Design",
+    "Interactive Gallery",
+    "Zoom-In Image Hover",
+    "Event Calendar"
+  );
+
+  const list = document.getElementById("featuresList");
+  list.innerHTML = ""; // clear old list
+  features.forEach(feature => {
+    const li = document.createElement("li");
+    li.textContent = feature;
+    list.appendChild(li);
+  });
+}
+function saveName() {
+  const name = document.getElementById("username").value;
+  if (name.trim() !== "") {
+    localStorage.setItem("userName", name);
+    showGreeting(name);
+  }
+}
+
+function showGreeting(name) {
+  const greeting = document.getElementById("greeting");
+  greeting.textContent = `Hello, ${name}! Welcome back to RISE 🌟`;
+  greeting.style.color = "purple";
+}
+
+window.onload = function () {
+  const savedName = localStorage.getItem("userName");
+  if (savedName) {
+    showGreeting(savedName);
+  }
+}
+
+function checkEvenOdd() {
+    const number = parseInt(document.getElementById("numberInput").value);
+    const result = document.getElementById("resultMessage");
+
+    if (isNaN(number)) {
+      result.textContent = "Please enter a valid number.";
+      result.style.color = "red";
+    } else if (number % 2 === 0) {
+      result.textContent = number + " is Even";
+      result.style.color = "green";
+    } else {
+      result.textContent = number + " is Odd";
+      result.style.color = "blue";
+    }
+  }
+    function checkAboutEvenOdd() {
+    const number = parseInt(document.getElementById("aboutNumberInput").value);
+    const result = document.getElementById("aboutResultMessage");
+
+    if (isNaN(number)) {
+      result.textContent = "Please enter a valid number.";
+      result.style.color = "red";
+    } else if (number % 2 === 0) {
+      result.textContent = number + " is Even — a perfect balance!";
+      result.style.color = "green";
+    } else {
+      result.textContent = number + " is Odd — uniquely powerful!";
+      result.style.color = "blue";
+    }
+  }
+   const sliderImages = [
+    "https://cdn.glitch.global/aa471699-50ea-47c7-942c-23c2415755c0/7dbaa791-c005-40a5-9db0-08e6dc5c5f22.jpg?v=1749668276204",
+    "https://cdn.glitch.global/aa471699-50ea-47c7-942c-23c2415755c0/WhatsApp%20Image%202025-06-12%20at%2012.36.59%20AM.jpeg?v=1749671146263",
+    "https://cdn.glitch.global/aa471699-50ea-47c7-942c-23c2415755c0/WhatsApp%20Image%202025-06-12%20at%2012.36.56%20AM.jpeg?v=1749671253707"
+  ];
+  let currentImage = 0;
+  function nextImage() {
+    currentImage = (currentImage + 1) % sliderImages.length;
+    document.getElementById("sliderImage").src = sliderImages[currentImage];
+  }
+    
+    function changeBackground() {
+  const lightColors = ["#ffe4e1", "#e0f7fa", "#f3e5f5", "#fff9c4", "#e8f5e9", "#fce4ec"];
+  const darkColors = ["#1e1e1e", "#2c2c2c", "#333333", "#3a3a3a", "#444444", "#222222"];
+
+  const isDarkMode = document.body.classList.contains("dark-mode");
+  const colorSet = isDarkMode ? darkColors : lightColors;
+
+  const randomIndex = Math.floor(Math.random() * colorSet.length);
+  document.body.style.backgroundColor = colorSet[randomIndex];
+}
+const events = {
+  "2025-07-05": "Community Outreach",
+  "2025-07-15": "Leadership Workshop",
+  "2025-07-22": "Mentorship Meetup",
+  "2025-08-10": "Innovation Challenge",
+  "2025-08-28": "Youth Dialogue"
+};
+
+let currentMonth = new Date().getMonth();
+let currentYear = new Date().getFullYear();
+
+function generateCalendarGrid(month = currentMonth, year = currentYear) {
+  const grid = document.getElementById("calendarGrid");
+  const title = document.getElementById("calendarTitle");
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const monthName = new Date(year, month).toLocaleString("default", { month: "long" });
+
+  title.textContent = `${monthName} ${year}`;
+  grid.innerHTML = "";
+
+  // Empty slots before the 1st day
+  for (let i = 0; i < firstDay; i++) {
+    grid.innerHTML += "<div></div>";
+  }
+
+  // Actual days
+  for (let day = 1; day <= daysInMonth; day++) {
+    const fullDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    const div = document.createElement("div");
+    div.className = "calendar-day";
+    
+    if (events[fullDate]) {
+      div.classList.add("event");
+      div.innerHTML = `${day}<br><small>${events[fullDate]}</small>`;
+      div.title = events[fullDate];
+    } else {
+      div.textContent = day;
+    }
+
+    grid.appendChild(div);
+  }
+}
+
+function nextMonth() {
+  currentMonth++;
+  if (currentMonth > 11) {
+    currentMonth = 0;
+    currentYear++;
+  }
+  generateCalendarGrid(currentMonth, currentYear);
+}
+
+function prevMonth() {
+  currentMonth--;
+  if (currentMonth < 0) {
+    currentMonth = 11;
+    currentYear--;
+  }
+  generateCalendarGrid(currentMonth, currentYear);
+}
+
+window.onload = function () {
+  generateCalendarGrid();
+  const savedName = localStorage.getItem("userName");
+  if (savedName) showGreeting(savedName);
+};
+</script>
+<!-- Sticky + Styled Footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h3>RISE</h3>
+      <p><strong>Founder:</strong> Hina Raza</p>
+      <p><a href="mailto:abc@example.com">abc@example.com</a></p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="home.html">Home</a><br>
+      <a href="about.html">About</a><br>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/leadwithrise" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/leadwithrise" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/company/leadwithrise" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="copyright">&copy; 2025 RISE. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

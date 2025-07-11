@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RISE</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style> 
+  .about-section-content h2 {
+  margin-top: 40px;
+}
+  
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+background-color: rgba(255, 105, 180, 0.4); 
+ z-index: 1;
+}
+
+.about-section-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-section-content.show {
+  opacity: 1;
+  transform: translateY(0);
+    animation: fadeIn 1s ease-in-out;
+
+}
+
+.about-section-content .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #ff9900;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.about-section-content .btn:hover {
+  background-color: #e68a00;
+}
+
+
+  .about-section {
+  background-image: url('images/rise.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+
+
+.about-section-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode nav {
+  background-color: #333;
+}
+
+body.dark-mode nav a {
+  color: #f0f0f0;
+}
+
+body.dark-mode nav a:hover,
+body.dark-mode nav a.active {
+  background-color: #555;
+}
+
+body.dark-mode #mission,
+body.dark-mode .founder-card,
+body.dark-mode .team-card {
+  background-color: #2c2c2c;
+  color: #ddd;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: purple;
+}
+
+nav a {
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+  flex: 1 1 auto;
+}
+
+nav a:hover {
+  background-color: #575757;
+}
+
+#mission {
+  background: linear-gradient(135deg, #ffe4e1, #f3e5f5);
+  padding: 40px 20px;
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+#mission h2 {
+  font-size: 2em;
+  color: purple;
+}
+
+#mission p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #333;
+}
+
+.founder-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, #f8bbd0, #e1bee7);
+  padding: 30px;
+  border-radius: 16px;
+  margin: 40px 20px;
+  max-width: 900px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.founder-card img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.founder-card h2 {
+  color: #4a148c;
+  margin: 10px 0;
+}
+
+.founder-card p {
+  color: #333;
+}
+
+.team-section {
+  background: #fafafa;
+  padding: 60px 20px;
+}
+
+.team-section h2 {
+  font-size: 2em;
+  color: purple;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.team-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+}
+
+.team-card img {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.team-card h3 {
+  margin: 10px 0 5px;
+  color: #4a148c;
+}
+
+.team-card p {
+  color: gray;
+  font-style: italic;
+}
+
+#darkModToggle, #scrollBtn {
+  position: fixed;
+  right: 20px;
+  z-index: 999;
+  border: none;
+  cursor: pointer;
+}
+
+#darkModToggle {
+  top: 10px;
+  background: purple;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+#scrollBtn {
+  bottom: 30px;
+  background-color: purple;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 768px) {
+  nav {
+    justify-content: space-around;
+  }
+
+  .founder-card {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .founder-card img {
+    margin-right: 20px;
+  }
+
+  #mission h2 {
+    font-size: 2.5em;
+  }
+
+  .team-card {
+    width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    flex: 1 1 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .team-card {
+    width: 90%;
+  }
+}
+  </style>
+  </head>
+  <body>
+       <div class="navbar">
+     
+     
+   <nav>
+     
+    <a class= "active" href="home.html"> Home </a> 
+    <a href="about.html"> About </a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+ </div>
+    <section class="about-section">
+  <div class="about-section-content" id="aboutContent">
+    <h1>About RISE</h1>
+    <p>RISE is dedicated to empowering individuals through education, mentorship, and innovation. Our mission is to uplift communities by nurturing talent, encouraging leadership, and promoting sustainable development.</p>
+    <a href="#more" class="btn">
+      Learn More <i class="fas fa-arrow-right"></i>
+    </a>
+
+    <h2 class="mission-heading">🚀 Our Mission</h2>
+    <p>
+      Our mission goes beyond skill development.<br>
+      We focus on enhancing problem-solving abilities<br>
+      through fun-based, personalised learning.<br>
+      We provide tailored elevation opportunities<br>
+      based on learner needs — offering mentorship,<br>
+      career growth pathways, freelancing opportunities,<br>
+      and financial independence to empower individuals<br>
+      for success in the tech industry.
+    </p>
+
+    <h2 class="vision-heading">🌟 Our Vision</h2>
+    <p>
+      At RISE, we equip individuals with future-ready skills,<br>
+      fostering resilience, innovation, and mentorship.
+    </p>
+  </div>
+</section>
+       <script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    const btn = document.getElementById("darkModToggle");
+    btn.textContent = document.body.classList.contains("dark-mode")
+      ? "Toggle Light Mode"
+      : "Toggle Dark Mode";
+  }
+
+ let globalVar = "I am a global variable";
+
+  function showVariables() {
+    let localVar = "I am a local variable";
+    const outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+      <p style="color: green;">Global Variable: ${globalVar}</p>
+      <p style="color: blue;">Local Variable: ${localVar}</p>
+    `;
+  }
+  const aboutContent = document.getElementById("aboutContent");
+
+  const showOnScroll = () => {
+    const sectionTop = aboutContent.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sectionTop < windowHeight - 100) {
+      aboutContent.classList.add("show");
+    }
+  };
+
+  window.addEventListener("scroll", showOnScroll);
+  window.addEventListener("load", showOnScroll);
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="mycss.css" />
+  <style>
+    nav a.active {
+      background-color: purple;
+    }
+
+    nav {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background-color: purple;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    nav a:hover {
+      background-color: black;
+    }
+
+    nav a {
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    body {
+      background-color: pink;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-card {
+      max-width: 500px;
+      margin: 50px auto;
+      background-color: pink;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .form-card h2 {
+      text-align: center;
+      color: #880066;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #4b004f;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #cc00aa;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #aa0088;
+    }
+
+    #formMessage {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    #darkModToggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 999;
+      background: purple;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    body.dark-mode nav {
+      background-color: #333;
+    }
+
+    body.dark-mode nav a {
+      color: #f0f0f0;
+    }
+
+    body.dark-mode nav a:hover,
+    body.dark-mode nav a.active {
+      background-color: #555;
+    }
+
+    body.dark-mode .form-card {
+      background-color: #1e1e1e;
+    }
+
+    body.dark-mode .form-card h2 {
+      color: #f0f0f0;
+    }
+
+    body.dark-mode label {
+      color: #f0f0f0;
+    }
+
+    body.dark-mode input,
+    body.dark-mode textarea {
+      background-color: #333;
+      color: #fff;
+      border-color: #555;
+    }
+
+    body.dark-mode input[type="submit"] {
+      background-color: #880066;
+    }
+
+    body.dark-mode input[type="submit"]:hover {
+      background-color: #aa0088;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <nav>
+      <a class="active" href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+
+  <div class="form-card">
+    <h2>Contact Form</h2>
+    <form onsubmit="return validateForm()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" />
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" placeholder="example@email.com" />
+
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" placeholder="03XXXXXXXXX" />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" placeholder="Type your message..."></textarea>
+
+      <input type="submit" value="Submit" />
+      <div id="formMessage"></div>
+    </form>
+  </div>
+
+  <button onclick="resetName()" style="margin: 10px auto; display: block;">Reset</button>
+
+  <button id="darkModToggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <script>
+    window.onload = function () {
+      const savedName = localStorage.getItem("userName");
+      if (savedName) {
+        const greet = document.createElement("h3");
+        greet.textContent = `Welcome back, ${savedName}! 👋`;
+        greet.style.textAlign = "center";
+        greet.style.color = "#880066";
+        document.querySelector(".form-card").prepend(greet);
+      }
+    };
+
+    function validateForm() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const formMessage = document.getElementById("formMessage");
+
+      formMessage.style.color = "red";
+      formMessage.textContent = "";
+
+      if (name === "") {
+        formMessage.textContent = "Name is required.";
+        return false;
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        formMessage.textContent = "Please enter a valid email.";
+        return false;
+      }
+
+      const phonePattern = /^[0-9]{10,15}$/;
+      if (!phone.match(phonePattern)) {
+        formMessage.textContent = "Phone must be 10–15 digits.";
+        return false;
+      }
+
+      if (message.length < 10) {
+        formMessage.textContent = "Message should be at least 10 characters.";
+        return false;
+      }
+
+      localStorage.setItem("userName", name);
+      formMessage.style.color = "green";
+      formMessage.textContent = "Form submitted successfully!";
+      document.querySelector("form").reset(); 
+      return false; 
+    }
+
+    function resetName() {
+      localStorage.removeItem("userName");
+      location.reload();
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.getElementById("darkModToggle");
+      btn.textContent = document.body.classList.contains("dark-mode")
+        ? "Toggle Light Mode"
+        : "Toggle Dark Mode";
+    }
+  </script>
+</body>
+</html>
